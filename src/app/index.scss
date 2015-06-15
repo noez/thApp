@@ -1,0 +1,130 @@
+
+$colors: (
+  'wine' : (
+    tint : #592F28,
+    base : #441C16,
+    shade : #2E0D08
+  ),
+  'gold' : (
+    tint : #d2aa60,
+    base : #bd9655,
+    shade : #81601C
+  ),
+  'gray' : (
+    tint : #949494,
+    base : #666666,
+    shade : #040707
+  ),
+  'white' : (
+    tint : #F5F5F5,
+    base : #FFFFFF,
+    shade: #EBEBEB
+  )
+);
+
+$font_sans-serif : 'Roboto', sans-serif;
+
+// Responsive formula target / context = result
+@function cp($target, $container){
+  @return ($target / $container) * 100%;
+}
+
+// get color base in a map color scheme
+@function color($color-name, $tone: base) {
+  @return map_get(map_get($colors, $color-name), $tone);
+}
+
+// get font in a map font stack
+@function font($font-name, $weight: base) {
+  @return map_get(map_get($font-stack, $font-name), $weight);
+}
+
+@function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover
+{
+    outline:0px !important;
+}
+.btn {
+  border-radius: 0 !important;
+  border: 0 !important;
+  &.btn-primary {
+    color: white;
+    background-color: color('gold');
+    padding: 10px 40px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 32px;
+    letter-spacing: 2px;
+    &:hover {
+      background-color: color('gold', 'tint');
+    }
+  }
+  &.btn-primary-light {
+    background-color: color('gold', 'tint');
+    border: 1px solid white;
+    &:hover {
+      background-color: #fff;
+      color: color('gray','shade');
+    }
+  }
+}
+
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $font_sans-serif;
+}
+
+.wrapper {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.th-card {
+  .th-card-panel {
+    cursor: pointer;
+    &:hover .th-card-name {
+      color : color('gold');
+    }
+  }
+  .th-card-name {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color : color('gray','tint');
+    font-size: 1em;
+  }
+}
+
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector
