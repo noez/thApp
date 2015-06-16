@@ -1,12 +1,67 @@
-.fixed-left {
+.fixed-left
+{
   position: fixed;
+
   width: 65%;
   height: 100%;
 }
 
-.rel-right {
-  width: calc(35% - 30px);
+.rel-right
+{
   float: right;
   overflow-x: hidden;
+
+  width: calc(35% - 30px);
   padding: 1em;
+}
+.about
+{
+  .about-header
+  {
+      padding: .5em 0;
+  }
+  .title
+  {
+      font-size: 13px;
+      font-weight: 500;
+
+      text-align: center;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+  }
+  ul
+  {
+      li
+      {
+          padding: .5em 0;
+      }
+  }
+  p
+  {
+      line-height: 24px;
+
+      text-align: center;
+  }
+  .btn
+  {
+      display: inline-block;
+
+      margin: 1em auto;
+  }
+}
+.logo
+{
+  text-align: center;
+  .logo-image
+  {
+      display: inline-block;
+
+      width: 144px;
+      height: 130px;
+
+      text-indent: -9999px;
+
+      background: transparent url('../assets/images/ui.png') no-repeat;
+      background-position: 0 0;
+  }
 }

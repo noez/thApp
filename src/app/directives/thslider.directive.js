@@ -18,17 +18,21 @@ angular.module('app.directives')
     replace: true,
     link: function(scope, element, attrs) {
       var superslides = null,
-        defaults = {};
+        defaults = {
+          'slide_easing': 'easeInOutCubic',
+          'slide_speed': 800,
+          'pagination': true,
+          'scrollable': true
+        };
 
       if (!_.isEmpty(scope.options)) {
         angular.extend(defaults, scope.options);
-        console.log('options', scope.options);
       }
 
       scope.$watch('slides', function(newVal) {
         if ( !( _.isUndefined(newVal) || _.isNull(newVal)) ) {
           $timeout(function() {
-            superslides = element.superslides(scope.options);
+            superslides = element.superslides(defaults);
           },500);
         }
       });

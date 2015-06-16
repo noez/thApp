@@ -2,15 +2,15 @@
   <ul class="slides-container">
     <li ng-repeat="slide in slides" class="th-slide">
       <div class="th-slide-caption" ng-class="slide.position">
-        <h3 class="th-slide-caption__title">{{ slide.title }}</h3>
-        <p class="th-slide-caption__text">{{ slide.caption }}</p>
-        <a href="">Slider action</a>
+        <h3 class="th-slide-caption-title">{{ slide.title }}</h3>
+        <p class="th-slide-caption-text">{{ slide.caption }}</p>
+        <a href="" class="btn btn-primary">{{slide.action}}</a>
       </div>
-      <img ng-src="{{ slide.src }}" alt="{{ slide.name }}" width="960" height="850" class="preserve">
+      <img ng-src="{{ slide.src }}" alt="{{ slide.name }}" width="960" height="850">
     </li>
   </ul>
   <nav class="slides-navigation th-slides-nav">
-    <a href="#" class="next th-slides-nav-item">Next</a>
-    <a href="#" class="prev th-slides-nav">Previous</a>
+    <a href="#" class="next th-slides-nav-item">Siguiente</a>
+    <a href="#" class="prev th-slides-nav-item">Anterior</a>
   </nav>
 </div>
