@@ -1,0 +1,16 @@
+<div id="slides" class="th-slides">
+  <ul class="slides-container">
+    <li ng-repeat="slide in slides" class="th-slide">
+      <div class="th-slide-caption" ng-class="slide.position">
+        <h3 class="th-slide-caption__title">{{ slide.title }}</h3>
+        <p class="th-slide-caption__text">{{ slide.caption }}</p>
+        <a href="">Slider action</a>
+      </div>
+      <img ng-src="{{ slide.src }}" alt="{{ slide.name }}" width="960" height="850" class="preserve">
+    </li>
+  </ul>
+  <nav class="slides-navigation th-slides-nav">
+    <a href="#" class="next th-slides-nav-item">Next</a>
+    <a href="#" class="prev th-slides-nav">Previous</a>
+  </nav>
+</div>

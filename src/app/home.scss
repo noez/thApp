@@ -1,0 +1,12 @@
+.fixed-left {
+  position: fixed;
+  width: 65%;
+  height: 100%;
+}
+
+.rel-right {
+  width: calc(35% - 30px);
+  float: right;
+  overflow-x: hidden;
+  padding: 1em;
+}

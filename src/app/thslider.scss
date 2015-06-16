@@ -1,0 +1,17 @@
+.th-slides {
+  .th-slide {
+    position: relative;
+  }
+  .th-slide-caption {
+    position: absolute;
+    z-index: 100;
+    &.top-left {
+      top: 2em;
+      left: 2em;
+    }
+     &.top-right {
+      top: 2em;
+      right: 3em;
+    }
+  }
+}
