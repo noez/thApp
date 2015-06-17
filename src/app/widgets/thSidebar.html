@@ -14,20 +14,20 @@
     </div>
   </div>
 
- <!--  Spread out menu -->
+  <!--  Spread out menu -->
   <div class="wide">
     <div class="nav-centerer">
       <div class="logo">
-        <span ng-click="collapseMenu()" class="logo-image">Tequila Hacienda Maravatio</span>
+        <span ng-click="goHome()" class="logo-image">Tequila Hacienda Maravatio</span>
       </div>
       <span class="title">Selecciona el tequila de tu preferencia y personaliza tu etiqueta.</span>
       <ul class="list-unstyled type-list">
-      <li ng-repeat="type in types" th-tequila-card th-type="type" th-size="200" th-selected="selected(type)"></li>
-    </ul>
+        <li ng-repeat="type in types" th-tequila-card th-type="type" th-size="200" th-selected="selected(type)"></li>
+      </ul>
     </div>
     <div class="tequila-finder">
       <span class="title">Haz que ese momento perdure por siempre.</span>
-      <a href="" class="btn btn-primary">Perzonaliza Ahora</a>
+      <button class="btn btn-primary" ng-click="startCustom();">Perzonaliza Ahora</button>
     </div>
     <div class="footer">
       <ul class="list-unstyled">

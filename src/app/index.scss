@@ -107,6 +107,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .main-container {
   position: absolute;
   top: 0;
@@ -116,22 +117,11 @@ body {
   min-width: calc(100% - 50px);
   overflow: hidden;
 }
-.th-card {
-  .th-card-panel {
-    cursor: pointer;
-    &:hover .th-card-name {
-      color : color('gold');
-    }
-  }
-  .th-card-name {
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    color : color('gray','tint');
-    font-size: 1em;
-  }
-}
 
+@import "styles/home";
+@import "styles/navbar";
+@import "styles/thslider";
+@import "styles/wizard";
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
 // injector

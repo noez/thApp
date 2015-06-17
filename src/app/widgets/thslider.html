@@ -4,7 +4,7 @@
       <div class="th-slide-caption" ng-class="slide.position">
         <h3 class="th-slide-caption-title">{{ slide.title }}</h3>
         <p class="th-slide-caption-text">{{ slide.caption }}</p>
-        <a href="" class="btn btn-primary">{{slide.action}}</a>
+        <a ui-sref="wizard.type" class="btn btn-primary">{{slide.action}}</a>
       </div>
       <img ng-src="{{ slide.src }}" alt="{{ slide.name }}" width="960" height="850">
     </li>

@@ -2,8 +2,8 @@
 
 angular.module('app', [
   'app.core',
-  'app.directives',
-  'app.navbar',
+  'app.services',
   'app.home',
-  'app.services'
+  'app.wizard',
+  'app.widgets'
 ]);

@@ -6,5 +6,6 @@
 angular.module('app.core', [
   'ui.router',
   'ngSanitize',
-  'ngCookies'
+  'ngCookies',
+  'ngStorage'
 ]);
