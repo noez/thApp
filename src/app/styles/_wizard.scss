@@ -1,22 +1,18 @@
-.fixed-left-hightlight {
-  background: red;
-  top: 70px;
-  height: 100%;
-}
 .wizard
 {
-
   width: 100%;
   height: 100%;
   .wizard-header
   {
     position: fixed;
-    top: 0;
     z-index: 20;
+    top: 0;
+
     width: 100%;
     padding: 1.6em 0;
-    background-color: #fff;
+
     border-bottom: 1px solid color('white','shade');
+    background-color: #fff;
     .steps-list
     {
       display: block;
@@ -81,8 +77,198 @@
   }
   .wizard-container
   {
-    position: relative;
-    top: 70px;
     z-index: 10;
+    top: 88px;
+  }
+}
+
+.wizard-view-header
+{
+  position: relative;
+  z-index: 30;
+  .title
+  {
+    font-size: 12px;
+    font-weight: normal;
+
+    position: fixed;
+    top: 88px;
+
+    display: inline-block;
+
+    width: 100%;
+    margin: 0;
+    padding: 1em 0;
+
+    text-align: center;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+
+    color: white;
+    border-bottom: 1px solid color('white','shade');
+    background: color('gold');
+    &:after
+    {
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+
+      display: block;
+
+      width: 10px;
+      height: 10px;
+      margin-left: -10px;
+
+      content: '';
+      content: '';
+      transform: rotate(45deg);
+
+      background: color('gold');
+    }
+  }
+}
+
+.wizard-view-types
+{
+  .type-list
+  {
+    display: table;
+
+    width: 100%;
+    margin-top: 2em;
+
+    text-align: center;
+    > .type-list-item
+    {
+      display: table-cell;
+
+      vertical-align: middle;
+    }
+  }
+}
+
+.wizard-view-container
+{
+  padding-top: 126px;
+}
+
+.wizard-view-order
+{
+  .bottle-fig
+  {
+    position: relative;
+    top: calc(50% - 63px);
+    left: 50%;
+
+    width: 200px;
+    height: 500px;
+
+    transform: translate(-50%, -50%);
+  }
+  .fixed-left
+  {
+    z-index: 5;
+    top: 126px;
+    left: 50px;
+
+    width: calc(50% - 25px);
+
+    background: color('white','tint');
+  }
+  .rel-right
+  {
+    top: 38px;
+
+    width: 50%;
+    min-height: 100vh;
+
+    background-color: #fff;
+  }
+}
+
+.order-config {
+  .order-product-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+  }
+  .form-control {
+    display: inline-block;
+    width: 50%;
+    margin-left: 2em;
+  }
+  .product-price {
+    color : color('gold');
+    font-size: 16px;
+  }
+}
+.th-label {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.wizard-view-events
+{
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  .event-list
+  {
+    display: table;
+
+    width: 750px;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    > .event-list-item
+    {
+      display: inline-block;
+      vertical-align: middle;
+      width: 250px;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 2em;
+      &:hover {
+        .event-circle{
+          border-color: color('gold');
+          img {
+            opacity: 0.9;
+          }
+        }
+        .event-name {
+          color: color('gold');;
+        }
+      }
+      .event-name {
+        display: inline-block;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 11px;
+        margin-top: 1em;
+        color: color('gray','tint');
+        letter-spacing: 2px;
+        transition : color 250ms ease-in-out;
+      }
+      .event-circle  {
+        display: inline-block;
+        border-radius: 50%;
+        border: 1px solid color('white', 'shade');
+        transition : border-color 250ms ease-in-out;
+        img {
+          display: inline-block;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          padding: 1em;
+          transition : opacity 250ms ease-in-out;
+        }
+
+      }
+    }
   }
 }

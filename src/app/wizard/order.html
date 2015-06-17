@@ -1,4 +1,45 @@
-<h1>Order View</h1>
-<input type="checkbox" ng-model="actions"> <br>
-<pre>{{actions | json}}</pre>
-<button ng-click="nextStep();">Next</button>
+<div class="wizard-view wizard-view-order">
+  <header class="wizard-view-header">
+    <h3 class="title">Elije el tamaño de tu botella y numero de cajas.</h3>
+  </header>
+  <div class="wizard-view-container">
+    <div class="fixed-left">
+      <figure class="bottle-fig text-center">
+        <img src="assets/images/ghots-bottle.png" height="500" ng-show="!product.img_zoom_size">
+        <img ng-src="{{ product.img_zoom_size }}" height="500">
+      </figure>
+    </div>
+    <div class="rel-right">
+      <div class="order-config">
+        <header class="order-config-header">
+          <h1 class="order-product-title" ng-bind="product.title"></h1>
+          <p class="order-product-txt" ng-bind-html="product.description"></p>
+        </header>
+        <!-- Product size -->
+        <div class="order-config-size">
+          <hr>
+          <label class="th-label">Presentación</label>
+          <select ng-model="product"
+            ng-options="product as product.bottlesize for product in products | orderBy:'id'"
+            class="form-control product-size-select">
+            <option value="">Seleccione</option>
+          </select>
+          <hr>
+        </div>
+        <!-- Product qty -->
+        <div class="order-config-qty">
+          <label class="th-label">Numero de cajas</label>
+          <input type="text" class="form-control product-qty" ng-model="qty" name="box" ng-disabled="!product.id"/>
+          <hr>
+        </div>
+        <!-- Product price -->
+        <div class="order-config-price" ng-show="priceTotal">
+          <label class="th-label">Precio</label>
+          <span class="product-price">$ {{ priceTotal }}  {{ productPrice.price_currency }}</span>
+          <hr>
+        </div>
+        <button class="btn btn-primary" ng-disabled="!isValid" ng-click="nextStep()">Siguiente</button>
+      </div>
+    </div>
+  </div>
+</div>

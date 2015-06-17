@@ -1,13 +1,11 @@
 'use strict';
 /**
-* Services Module
+* app.services Module
 *
 * Description
 */
-angular.module('app.services', [])
-  .constant('baseUrl', 'http://maravatio.haushaus.mx/dashboard/api/')
-
-  .factory('Types', ['$http','$q', 'baseUrl',  function($http, $q, baseUrl){
+angular.module('app.services')
+  .factory('Types', ['$http','$q', 'baseUrl', function($http, $q, baseUrl){
     return {
       getAll: function(){
         var defered = $q.defer(),

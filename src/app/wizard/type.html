@@ -1,4 +1,10 @@
-<h1>Type View</h1>
-<input type="checkbox" ng-model="actions"> <br>
-<pre>{{actions | json}}</pre>
-<button ng-click="nextStep();">Next</button>
+<div class="wizard-view wizard-view-types">
+  <header class="wizard-view-header">
+    <h3 class="title">Selecciona el tequila de tu preferencia</h3>
+  </header>
+  <div class="wizard-view-container">
+    <ul class="list-unstyled type-list">
+      <li ng-repeat="type in types" th-tequila-card th-type="type" th-size="400" th-selected="selected(type)" class="type-list-item"></li>
+    </ul>
+  </div>
+</div>

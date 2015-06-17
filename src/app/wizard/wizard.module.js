@@ -98,7 +98,7 @@ angular.module('app.wizard', [
       };
 
       $rootScope.$on('$stateChangeStart',
-      function(event, toState, toParams, fromState, fromParams){
+      function(event, toState, toParams, fromState){
           var toRef = toState.name.replace('wizard.','');
 
           var toIndex = _.findIndex($scope.wizard.steps, function (step) {

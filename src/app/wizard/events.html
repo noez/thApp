@@ -1,4 +1,17 @@
-<h1>Events View</h1>
-<input type="checkbox" ng-model="actions"> <br>
-<pre>{{actions | json}}</pre>
-<button ng-click="nextStep();">Next</button>
+<div class="wizard-view wizard-view-events">
+  <header class="wizard-view-header">
+    <h3 class="title">¿Qué estamos celebrando?</h3>
+  </header>
+ <div class="wizard-view-container">
+  <ul class="list-unstyled event-list">
+    <li ng-repeat="event in events" class="event-list-item">
+      <div class="event-block" ng-click="selectEvent(event)">
+        <figure class="event-circle">
+          <img ng-src="{{ event.eventimg}}" alt="">
+        </figure>
+        <span class="event-name" >{{ event.name }}</span>
+      </div>
+    </li>
+  </ul>
+ </div>
+</div>
