@@ -14,13 +14,18 @@ angular.module('wizard.design', [])
       });
     $urlRouterProvider.otherwise('/');
   }])
-  .controller('DesignCtrl', ['$scope', function($scope){
+  .controller('DesignCtrl', ['$scope', '$sessionStorage', 'Templates', function($scope, $sessionStorage, Templates){
     $scope.isValid = false;
+    $scope.order = $sessionStorage.order;
+
     $scope.$emit('stepToWizard', {
       index: 0,
       isValid: $scope.isValid
     });
 
+    if ( ) {
+
+    }
     $scope.nextStep = function  () {
       $scope.isValid = $scope.actions;
       $scope.$emit('stepToWizard', {
