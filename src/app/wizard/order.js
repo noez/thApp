@@ -15,5 +15,16 @@ angular.module('wizard.order', [])
     $urlRouterProvider.otherwise('/');
   }])
   .controller('OrderCtrl', ['$scope', function($scope){
-
+    $scope.isValid = false;
+    $scope.$emit('stepToWizard', {
+      index: 1,
+      isValid: $scope.isValid
+    });
+    $scope.nextStep = function() {
+      $scope.isValid = $scope.actions;
+      $scope.$emit('stepToWizard', {
+      index: 1,
+      isValid: $scope.isValid
+    });
+    };
   }]);

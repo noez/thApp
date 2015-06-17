@@ -15,5 +15,19 @@ angular.module('wizard.design', [])
     $urlRouterProvider.otherwise('/');
   }])
   .controller('DesignCtrl', ['$scope', function($scope){
+    $scope.isValid = false;
+    $scope.$emit('stepToWizard', {
+      index: 0,
+      isValid: $scope.isValid
+    });
+
+    $scope.nextStep = function  () {
+      $scope.isValid = $scope.actions;
+      $scope.$emit('stepToWizard', {
+      index: 0,
+      isValid: $scope.isValid
+    });
+    };
+
 
   }]);

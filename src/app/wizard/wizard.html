@@ -2,14 +2,15 @@
   <header class="wizard-header">
     <nav class="nav-steps">
       <ul class="list-unstyled steps-list">
-        <li class="steps-list-item" ng-repeat="step in $storage.steps">
+        <li class="steps-list-item" ng-repeat="step in wizard.steps">
         <th-wizard-step step="step" step-valid="step.valid" step-ref="wizard.{{ step.ref }}" ></th-wizard-step>
         </li>
+        <span>{{wizard.active}}</span>
       </ul>
     </nav>
   </header>
-  <div class="wizard-container" ui-view>
 
+  <div class="wizard-container" ui-view>
   </div>
 </div>
 
