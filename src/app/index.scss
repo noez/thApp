@@ -84,6 +84,29 @@ button:hover
   }
 }
 
+#loading-bar {
+
+  .bar {
+    background: color('gold', tint);
+    height: 3px;
+  }
+  .peg {
+    box-shadow: color('gold', tint) 1px 0 6px 1px;
+  }
+}
+#loading-bar-spinner {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .spinner-icon {
+    width: 32px;
+    height: 32px;
+    border-radius:28px;
+    border-top-color:  color('gold', tint);
+    border-left-color: color('gold', tint);
+  }
+}
+
 
 .browsehappy {
   margin: 0.2em 0;

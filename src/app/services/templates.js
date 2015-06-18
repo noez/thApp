@@ -13,14 +13,14 @@ angular.module('app.services')
  * # Templates
  * Service in the app.services
  */
- .factory('Template', ['$http', '$q', 'baseUrl', function($http, $q, baseUrl) {
+ .factory('Templates', ['$http', '$q', 'baseUrl', function($http, $q, baseUrl) {
   // Public API here
   return {
-    get: function(eventId, productId) {
+    get: function(params) {
       $http.defaults.withCredentials = false;
       var defered = $q.defer(),
         promise = defered.promise,
-        url = baseUrl + 'events/' + eventId + '/templates/?q=' + productId;
+        url = baseUrl + 'events/' + params.eventId + '/templates/?q=' + params.typeId;
 
       $http.get(url)
         .success(function(data) {

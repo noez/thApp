@@ -1,0 +1,25 @@
+<div class="th-image-transform">
+  <hr>
+  <div class="tfm-wrap">
+    <label class="th-label">Arrastra para mover la imagen  </label>
+    <div class="tfm">
+
+      <div class="tfm-wrap" >
+        <div class="tfm-area"></div>
+        <div class="tfm-inner">
+          <div class="tfm-container">
+            <div class="tfm-mask">
+              <img ng-src="{{ image.file}}" class="tfm-image">
+            </div>
+            <img ng-src="{{ image.file}}" class="tfm-image tfm-image-overlay">
+          </div>
+        </div>
+      </div>
+      <label class="text-center th-label">Aumenta o Reduce el tamaño de la imagen </label>
+      <div class="tfm-range">
+        <div class="tfm-range-thumb"></div>
+        <div class="tfm-range-track"></div>
+      </div>
+    </div>
+  </div>
+</div>

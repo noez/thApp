@@ -2,12 +2,109 @@
   <header class="wizard-view-header">
     <h3 class="title">Diseña tu etiqueta</h3>
   </header>
- <div class="wizard-view-container">
-  <div class="fixed-left">
-    ñlskslñk
-  </div>
-  <div class="rel-right">
-  kañlksñlks
-  </div>
- </div>
+  <div class="wizard-view-container">
+    <div class="fixed-left">
+      <div class="label-final">
+        <!-- Firs Headline -->
+        <div class="label-final-txt label-final-txt-first">
+          <span class="ff-stack" ng-class="designData.font.stack">{{ designData.firstTl}}</span>
+        </div>
+        <!-- Template -->
+        <div class="label-final-template">
+          <img ng-src="{{ templateLabel.timage }}" alt="">
+        </div>
+        <!-- Label Image to Transform -->
+        <th-label-image th-image="imageUploaded" th-label="labelRender" th-build="labelBuild">
+        </th-label-image>
+        <!-- Second Headline -->
+        <div class="label-final-txt label-final-txt-second">
+          <span class="ff-stack" ng-class="designData.font.stack">{{ designData.secondTl}}</span>
+        </div>
+        <!-- Label base -->
+        <div class="label-final-base">
+          <img ng-src="{{ product.img_tag }}" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- rel right-->
+    <div class="rel-right">
+      <!-- Templates -->
+      <th-templates th-params="params" class="th-template"></th-templates>
+      <!-- Upload Image -->
+      <div class="th-upload-image">
+        <label class="th-label"><strong>2</strong>Subir fotografía</label></label>
+        <input type="file" th-file-upload="files" class="form-control">
+        <!-- Image Transform -->
+        <th-image-transform th-image="imageUploaded" ng-show="imageUploaded"></th-image-transform>
+        <!-- Image filters -->
+        <div class="th-image-filters" ng-show="imageUploaded">
+          <hr>
+          <label class="th-label">Aplicar filtros a tu fotografía (opcional)</label>
+          <form>
+            <div class="th-filter-item">
+              <img src="assets/images/f-bn.png" alt="Filtro Blanco y Negro">
+              <span class="th-filter-control">
+                <input type="radio" name="filter" ng-model="designData.filter" value="blackwhite"> Blanco &amp;Negro
+              </span>
+            </div>
+            <div class="th-filter-item">
+              <img src="assets/images/f-sepia.png" alt="Filtro Sepia">
+              <span class="th-filter-control">
+                <input type="radio" name="filter" ng-model="designData.filter" value="sepia"> Sepia
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Headlines -->
+      <div class="th-headlines">
+        <label class="th-label">
+          <strong>3</strong>
+          Personalizar textos
+        </label>
+        <form  class="form-horizontal">
+          <div class="form-group">
+          <label class="col-sm-2 control-label">Titulo Primario:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" ng-model="designData.firstTl"/>
+          </div>
+        </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Titulo Secundario:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" ng-model="designData.secondTl"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Fuente:</label>
+            <div class="col-sm-10">
+              <select class="form-control"
+                      ng-model="designData.font"
+                      ng-options="font as font.name for font in fontStacks">
+                <option value="">Seleccione</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <button class="btn btn-primary" ng-disabled="!isValid" ng-click="nextStep()">Siguiente</button>
+    </div> <!-- /.rel-right -->
+  </div> <!-- /.wizard-view-container -->
 </div>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <filter id="greyscale">
+    <feColorMatrix type="matrix" values="0.3333 0.3333 0.3333 0 0
+                0.3333 0.3333 0.3333 0 0
+                0.3333 0.3333 0.3333 0 0
+                0      0      0      1 0"></feColorMatrix>
+  </filter>
+</svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <filter id="old-timey">
+    <feColorMatrix values="0.14 0.45 0.05 0 0
+      0.12 0.39 0.04 0 0
+      0.08 0.28 0.03 0 0
+      0 0 0 1 0"></feColorMatrix>
+  </filter>
+</svg>

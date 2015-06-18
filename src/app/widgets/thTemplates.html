@@ -1,0 +1,13 @@
+<div class="th-templates">
+  <label class="th-label"><strong>1</strong>Seleccionar una plantilla (opcional)</label>
+  <div class="th-templates-wrap">
+    <ul class="list-unstyled th-templates-list">
+      <li ng-repeat="template in templates" class="th-template-item">
+        <div class="template-block" ng-click="selectTemplate(template);">
+          <img ng-src="{{ template.timage}}" alt="" height="120">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
