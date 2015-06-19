@@ -7,9 +7,8 @@
       <a class="logo-image" title="Abrir Menú Principal">Tequila Hacienda Maravatio</a>
     </div>
     <div class="sign-in">
-      <a href="" title="Iniciar Sesión">
+      <a href="/accounts/profile" title="Iniciar Sesión">
         <span class="sign-in-icon"></span>
-        <!-- <span class="sign-in-label">Iniciar</span> -->
       </a>
     </div>
   </div>
@@ -20,9 +19,13 @@
       <div class="logo">
         <span ng-click="goHome()" class="logo-image">Tequila Hacienda Maravatio</span>
       </div>
-      <span class="title">Selecciona el tequila de tu preferencia y personaliza tu etiqueta.</span>
+      <span class="title">Puedes personalizar los siguientes tipos de tequila.</span>
       <ul class="list-unstyled type-list">
-        <li ng-repeat="type in types" th-tequila-card th-type="type" th-size="200" th-selected="selected(type)"></li>
+        <li ng-repeat="type in types" class="type-list-item">
+          <img ng-src="{{ type.bimage }}" alt="{{ type.name }}" height="200"/>
+          <br/>
+          <label class="th-label"> {{ type.name }}</label>
+        </li>
       </ul>
     </div>
     <div class="tequila-finder">

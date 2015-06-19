@@ -40,15 +40,26 @@ angular.module('wizard.event', [])
         console.log(error);
       });
 
-    var labelsLen = $scope.order.labels.length;
+    var labelsLen = $scope.order.cycle.length;
     var currentIndex = $scope.order.cycle.index;
 
-    if (currentIndex === labelsLen) {
-      $scope.order.labels.pop();
-    }
 
     if ( _.has($scope.order, 'event')) {
       delete $scope.order.event;
+
+    }
+
+    if(!_.isEmpty($scope.order.labels[0].template || !_.isEmpty($scope.order.labels[0].imgOriginal) )) {
+
+      for( var i = 0; i < $scope.order.labels.length; i++) {
+        var cleanLabel = {
+          template : {},
+          imgOriginal : {},
+          render : {}
+        };
+        $scope.order.labels[i]= cleanLabel;
+      }
+
     }
 
     $scope.selectEvent = function ( event ) {

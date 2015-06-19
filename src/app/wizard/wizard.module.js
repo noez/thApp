@@ -20,12 +20,11 @@ angular.module('app.wizard', [
         templateUrl: 'app/wizard/wizard.html',
         controller: 'WizardCtrl'
       });
-    $urlRouterProvider.otherwise('/wizard/type');
+    $urlRouterProvider.otherwise('/');
   }])
   .controller('WizardCtrl', ['$scope', '$rootScope', '$state',
     '$sessionStorage',
     function($scope, $rootScope, $state, $sessionStorage) {
-
       $scope.$storage = $sessionStorage;
 
       // default configuration wizard
@@ -97,22 +96,32 @@ angular.module('app.wizard', [
         }
       };
 
+
+
       $rootScope.$on('$stateChangeStart',
       function(event, toState, toParams, fromState){
+
+
           var toRef = toState.name.replace('wizard.','');
 
           var toIndex = _.findIndex($scope.wizard.steps, function (step) {
             return step.ref === toRef;
           });
 
-          var isUnlocked = $scope.wizard.steps[toIndex].valid;
+          if(toIndex!= -1) {
+            var isUnlocked = $scope.wizard.steps[toIndex].valid;
 
-          if (isUnlocked) {
-            $scope.wizard.active = toIndex;
-            $scope.resetRight();
-          }else {
-            $state.go(fromState.name);
+            if (isUnlocked) {
+              $scope.wizard.active = toIndex;
+              $scope.resetRight();
+            }else {
+              $state.go(fromState.name);
+            }
           }
+
+
+
+
       });
 
       // listen for changes in the steps

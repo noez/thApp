@@ -5,7 +5,7 @@
  * Description
  */
 angular.module('app.widgets')
-  .directive('thTequilaCard', [function() {
+  .directive('thTequilaCard', ['$parse',function($parse) {
     // Runs during compile
     return {
       restrict: 'A',
@@ -17,6 +17,7 @@ angular.module('app.widgets')
       transclude: true,
       templateUrl: 'app/widgets/thTequilaCard.html',
       link: function(scope) {
+
         scope.onSelectType = function(type) {
           scope.selected(type);
         };

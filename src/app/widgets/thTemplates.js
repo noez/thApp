@@ -13,14 +13,14 @@ angular
         params : '=thParams'
       }, // {} = isolate, true = child, false/undefined = no change
       controller: function($scope, $element, $attrs, $transclude) {
-        console.log($scope.params);
+
         $scope.templates = [];
 
         this.getTemplates = function () {
           Templates
             .get($scope.params)
             .then(function (data) {
-              console.log('data', data);
+
               $scope.templates = data;
             })
             .catch(function(error) {
@@ -28,8 +28,7 @@ angular
             });
         };
         $scope.selectTemplate = function (template) {
-          console.log('Template seleccionado', template);
-          DesignData.template = template;
+          $scope.$emit('thTemplateSelected',template);
         };
       },
       // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
@@ -42,7 +41,6 @@ angular
       link: function($scope, iElm, iAttrs, controller) {
         $scope.$watch('params', function (newVal) {
           if (!_.isEmpty(newVal)) {
-            console.log('parametros listos', newVal);
             return controller.getTemplates();
           }
         });

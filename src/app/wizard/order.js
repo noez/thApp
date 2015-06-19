@@ -60,7 +60,6 @@ angular.module('wizard.order', [])
     } else {
       // si no existe crear el objeto en sesion
       $scope.order.size = {};
-      console.log($scope.order);
       getProducts(false);
       $scope.qty = 1;
     }
@@ -117,8 +116,17 @@ angular.module('wizard.order', [])
         index: 1,
         length : $scope.qty * $scope.product.maxlabels
       };
-
       $scope.order.labels = [];
+      for( var i = 0; i < $scope.qty * $scope.product.maxlabels; i++) {
+        var label = {
+          template : {},
+          imgOriginal : {},
+          render : {}
+        };
+        $scope.order.labels.push(label);
+
+      }
+
 
       callWizard();
     };

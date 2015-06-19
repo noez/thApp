@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app.widgets')
-  .directive('thLabel', [ 'DesignData' ,function(DesignData){
+  .directive('thLabelImage', [ 'DesignData' ,function(DesignData){
   // Runs during compile
   return {
     scope: {

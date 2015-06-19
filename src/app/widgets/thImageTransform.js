@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app.widgets')
-  .directive('thImageTransform', ['$window', '$document', 'DesignData', function($window, $document, DesignData) {
+  .directive('thImageTransform', ['$timeout','$window', '$document', 'DesignData', function($timeout, $window, $document, DesignData) {
     // Runs during compile
 
     return {
@@ -289,7 +289,7 @@ angular.module('app.widgets')
             self.track = element.find('.tfm-range-track');
 
             var left = ( ( self.track.width() - self.thumb.width() ) /( self.data.max - self.data.min )   * (self.data.value - self.data.min ) );
-            console.log(left);
+
             // reset styles
             self.thumb.css({
               top: 0,
@@ -346,7 +346,7 @@ angular.module('app.widgets')
           },
           unbind: function() {
             range.thumb.off(events.start, range.onStartHandler);
-          },
+          }
         };
 
         // listen if a new image has been uploaded
@@ -355,9 +355,12 @@ angular.module('app.widgets')
             transform.reload();
             range.reload();
           } else if (!_.isUndefined(newVal) && !_.isEmpty(newVal)) {
-            transform.init();
-            range.init();
-            isInitialized = true;
+            $timeout(function () {
+              transform.init();
+              range.init();
+              isInitialized = true;
+            },1000);
+
           }
         });
       }

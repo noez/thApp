@@ -11,7 +11,7 @@
         </div>
         <!-- Template -->
         <div class="label-final-template">
-          <img ng-src="{{ templateLabel.timage }}" alt="">
+          <img ng-src="{{ template.timage }}" alt="">
         </div>
         <!-- Label Image to Transform -->
         <th-label-image th-image="imageUploaded" th-label="labelRender" th-build="labelBuild">
@@ -35,9 +35,9 @@
         <label class="th-label"><strong>2</strong>Subir fotografía</label></label>
         <input type="file" th-file-upload="files" class="form-control">
         <!-- Image Transform -->
-        <th-image-transform th-image="imageUploaded" ng-show="imageUploaded"></th-image-transform>
+        <th-image-transform th-image="imageUploaded" ng-show="isValid"></th-image-transform>
         <!-- Image filters -->
-        <div class="th-image-filters" ng-show="imageUploaded">
+        <div class="th-image-filters" ng-show="isValid">
           <hr>
           <label class="th-label">Aplicar filtros a tu fotografía (opcional)</label>
           <form>
@@ -51,6 +51,12 @@
               <img src="assets/images/f-sepia.png" alt="Filtro Sepia">
               <span class="th-filter-control">
                 <input type="radio" name="filter" ng-model="designData.filter" value="sepia"> Sepia
+              </span>
+            </div>
+            <div class="th-filter-item">
+              <img src="assets/images/f-no-filter.png" alt="Sin filtro">
+              <span class="th-filter-control">
+                <input type="radio" name="filter" ng-model="designData.filter" value="no-filter"> Sin filtros
               </span>
             </div>
           </form>
@@ -87,6 +93,7 @@
           </div>
         </form>
       </div>
+      <hr/>
       <button class="btn btn-primary" ng-disabled="!isValid" ng-click="nextStep()">Siguiente</button>
     </div> <!-- /.rel-right -->
   </div> <!-- /.wizard-view-container -->

@@ -481,6 +481,15 @@
   }
 }
 
+.th-headlines {
+  .control-label {
+    font-weight: normal;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
 .blackwhite{
   filter: grayscale(100%);
   filter: url(#greyscale);
@@ -510,4 +519,40 @@
 }
 .ff-stack.sans-c {
   font-family: Impact, Charcoal, sans-serif;
+}
+
+
+.wizard-view-summary {
+  .th-summary {
+    width: 600px;
+    margin: 2em auto;
+    .th-summary-price {
+      font-size: 18px;
+      text-align: right;
+      strong {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding-right: 1em;
+        color : color('gray');
+      }
+      color: color('gold');
+    }
+  }
+
+  .th-summary-renders {
+    display: table;
+    text-align: justify;
+    width: 100%;
+    > li {
+      display: inline-block;
+      vertical-align: middle;
+      background: white;
+      margin: 0.5em;
+      border: 1px solid color('white','shade');
+      img {
+        padding: 1em;
+      }
+    }
+  }
 }

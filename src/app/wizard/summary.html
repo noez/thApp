@@ -1,0 +1,28 @@
+<div class="wizard-view wizard-view-summary">
+  <header class="wizard-view-header">
+    <h3 class="title">Resumen</h3>
+  </header>
+  <div class="wizard-view-container">
+
+    <div class="th-summary">
+      <label class="th-label text-center">
+        Estás a muy poco de tener tu pedido personalizado es momento de revisar si lo
+        seleccionado previamente es correcto, si no, puedes retroceder y modificarlo.
+      </label>
+      <ul class="list-unstyled th-summary-renders">
+        <li ng-repeat="labelRender in renders">
+          <img ng-src="{{ labelRender.render.label }}" alt="" height="300"/>
+        </li>
+      </ul>
+      <div class="th-summary-price">
+        <hr/>
+        <span><strong>Total: </strong>$ {{ priceTotal}}</span>
+        <hr/>
+      </div>
+      <div class="clearfix"><button class="btn btn-primary" ng-disabled="!isAllowed" ng-click="continueDesigning();">Continuar personalizando</button>
+      <button class="btn btn-primary pull-right" ng-click="checkout()">Pasar a pagar</button></div>
+    </div>
+  </div>
+</div>
+
+
