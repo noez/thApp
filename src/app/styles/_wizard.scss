@@ -313,9 +313,10 @@
   }
   .rel-right
   {
+    overflow: hidden;
+
     width: calc(100% - 400px);
     height: auto;
-    overflow: hidden;
   }
   .th-label
   {
@@ -436,121 +437,170 @@
       left: 0;
     }
   }
-  .label-final-template {
+  .label-final-template
+  {
     position: absolute;
+    z-index: 40;
     bottom: 140px;
+
     width: 315px;
     height: 224px;
-    z-index: 40;
   }
-  .label-final-txt {
+  .label-final-txt
+  {
     position: absolute;
-    height: 48px;
     z-index: 40;
-    width: 278px;
-    word-wrap: break-word;
-    color: white;
-    margin: 0 18px;
+
     display: block;
+
+    width: 278px;
+    height: 48px;
+    margin: 0 18px;
+
     text-align: center;
-    span {
+    word-wrap: break-word;
+
+    color: white;
+    span
+    {
       font-size: 18px;
+
       color: white;
     }
-    &.label-final-txt-first {
+    &.label-final-txt-first
+    {
       top: 186px;
     }
-     &.label-final-txt-second {
+    &.label-final-txt-second
+    {
       bottom: 78px;
     }
   }
 }
 
 
-.th-image-filters {
-  .th-filter-item {
+.th-image-filters
+{
+  .th-filter-item
+  {
     display: inline-block;
-    vertical-align: middle;
+
     padding: 1em;
-    border: 1px solid color('white','shade');
+
     text-align: center;
+    vertical-align: middle;
+
+    border: 1px solid color('white','shade');
   }
-  .th-filter-control {
+  .th-filter-control
+  {
     display: inline-block;
+
     width: 100%;
   }
 }
 
-.th-headlines {
-  .control-label {
-    font-weight: normal;
+.th-headlines
+{
+  .control-label
+  {
     font-size: 11px;
+    font-weight: normal;
+
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 }
 
-.blackwhite{
+.blackwhite
+{
+  -webkit-filter: grayscale(100%);
+
   filter: grayscale(100%);
-  filter: url(#greyscale);
+
   filter: gray;
+
+  filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
 }
 
-.sepia {
-  filter: url(sepia.svg#old-timey);
-  filter: sepia(100%);
-  background-color: #5E2612;
-  filter: alpha(opacity=50);
+.sepia
+{
   zoom: 1;
+
+  background-color: #5e2612;
+  filter: url("data:text/plain;charset=utf-8;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxmaWx0ZXIgaWQ9Im9sZC10aW1leSI+DQogICAgPGZlQ29sb3JNYXRyaXggdmFsdWVzPSIwLjE0IDAuNDUgMC4wNSAwIDANCiAgICAgIDAuMTIgMC4zOSAwLjA0IDAgMA0KICAgICAgMC4wOCAwLjI4IDAuMDMgMCAwDQogICAgICAwIDAgMCAxIDAiPjwvZmVDb2xvck1hdHJpeD4NCiAgPC9maWx0ZXI+DQo8L3N2Zz4=");
+  filter: sepia(100%);
+  filter: alpha(opacity=50);
 }
 
 
-.ff-stack.serif-a {
-  font-family: "Times New Roman", Times, serif;
+.ff-stack.serif-a
+{
+  font-family: 'Times New Roman', Times, serif;
 }
-.ff-stack.serif-b {
+.ff-stack.serif-b
+{
   font-family: Georgia, serif;
 }
-.ff-stack.sans-a {
+.ff-stack.sans-a
+{
   font-family: Arial, Helvetica, sans-serif;
 }
-.ff-stack.sans-b {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+.ff-stack.sans-b
+{
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-.ff-stack.sans-c {
+.ff-stack.sans-c
+{
   font-family: Impact, Charcoal, sans-serif;
 }
 
 
-.wizard-view-summary {
-  .th-summary {
+.wizard-view-summary
+{
+  .th-summary
+  {
     width: 600px;
     margin: 2em auto;
-    .th-summary-price {
+    .th-summary-price
+    {
       font-size: 18px;
+
       text-align: right;
-      strong {
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        padding-right: 1em;
-        color : color('gray');
-      }
+
       color: color('gold');
+      strong
+      {
+        font-size: 14px;
+
+        padding-right: 1em;
+
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        color: color('gray');
+      }
     }
   }
-
-  .th-summary-renders {
+  .th-summary-renders
+  {
     display: table;
-    text-align: justify;
+
     width: 100%;
-    > li {
+
+    text-align: justify;
+    > li
+    {
       display: inline-block;
+
+      margin: .5em;
+
       vertical-align: middle;
-      background: white;
-      margin: 0.5em;
+
       border: 1px solid color('white','shade');
-      img {
+      background: white;
+      img
+      {
         padding: 1em;
       }
     }
